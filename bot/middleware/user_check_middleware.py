@@ -17,7 +17,7 @@ class UserCheckMiddleware(BaseMiddleware):
         handler: Callable[[Message, Dict[str, Any]], Awaitable[Any]],
         message: Message,
         data: Dict[str, Any]
-    ):
+    ):  
         try:
             user = await DatabaseService.get_user_by_id(message.from_user.id, message.chat.id)
         except Exception as e:

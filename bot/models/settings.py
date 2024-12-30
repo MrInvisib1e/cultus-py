@@ -10,6 +10,7 @@ class Setting(Base):
     
     id = Column(Integer, primary_key=True, autoincrement=True)
     chat_id = Column(BigInteger, index=True)
+    user_id = Column(BigInteger, index=True)
     type = Column(Enum(SettingType))  
     description = Column(String(255)) 
     is_active = Column(Boolean, default=True)

@@ -776,3 +776,4 @@ FodyWeavers.xsd
 bot-env/
 config.py
 # End of https://www.toptal.com/developers/gitignore/api/vs,visualstudio,visualstudiocode,python,pythonvanilla
+default_messages.json

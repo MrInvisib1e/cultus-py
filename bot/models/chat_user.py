@@ -1,4 +1,5 @@
 from sqlalchemy import Column, Integer, BigInteger, String, Boolean, DateTime
+from sqlalchemy.ext.hybrid import hybrid_property
 from datetime import datetime
 from .base import Base
 
@@ -18,4 +19,13 @@ class ChatUser(Base):
     messages_count = Column(BigInteger, default=0)
     last_message_date = Column(DateTime, default=datetime.now)
     is_active = Column(Boolean, default=True)
+    
+    @hybrid_property
+    def upcoming_birthday(self):
+        return getattr(self, '_upcoming_birthday', None)
+
+    @upcoming_birthday.setter
+    def upcoming_birthday(self, value):
+        self._upcoming_birthday = value
+
     

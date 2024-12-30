@@ -10,5 +10,5 @@ class Message(Base):
     id = Column(Integer, primary_key=True)
     type = Column(Enum(TextType))  
     media = Column(String(5000))  
-    text = Column(String(255)) 
+    text = Column(String(5000)) 
     is_active = Column(Boolean, default=True)
